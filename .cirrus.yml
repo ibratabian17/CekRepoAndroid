@@ -1,5 +1,5 @@
 env:
-    MANIFEST: https://github.com/PixelExperience/manifest.git -b eleven-plus
+    MANIFEST: https://github.com/PixelExperience/manifest -b eleven-plus
     DEVICE: miatoll
     OEM: xiaomi
     DT_LINK: https://github.com/PixelExperience-Devices/device_xiaomi_miatoll.git
