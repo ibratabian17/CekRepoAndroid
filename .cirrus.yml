@@ -32,8 +32,8 @@ task:
        - sudo apt update -y && sudo apt install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
        - sudo apt install python3 -y
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
-       - git config --global user.name "Sushrut1101"
-       - git config --global user.email "guptasushrut@gmail.com"
+       - git config --global user.name "Ibratabian17"
+       - git config --global user.email "ibratabian@gmail.com"
        - git clone https://github.com/akhilnarang/scripts.git ~/scripts
        - cd ~/scripts
        - sudo bash setup/android_build_env.sh
@@ -45,9 +45,7 @@ task:
       - ls -l -a -h
   
   Sync_script:
-      - echo "============================"
-      - echo "Syncing The Sources..."
-      - echo "============================"
+      - printf "============================\nSyncing The Sources...\n============================"
       - mkdir -p ~/work
       - cd ~/work
       - repo init -u $MANIFEST
@@ -55,9 +53,7 @@ task:
       - git clone $DT_LINK $DT_PATH
       - git clone $VT_LINK $VT_PATH
       - git clone $KT_LINK $KT_PATH
-      - echo "============================"
-      - echo "Sync Completed!"
-      - echo "============================"
+      - printf "============================\nSync Completed!\n============================"
 
   Build_script:
       - echo "============================"
