@@ -1,5 +1,5 @@
 env:
-    MANIFEST: https://github.com/PixelExperience/manifest -b eleven-plus
+    MANIFEST: https://android.googlesource.com/platform/manifest -b android-11.0.0_r9
     DEVICE: A6020
     OEM: lenovo
     DT_LINK: https://github.com/ibratabian17/device_lenovo_A6020.git
@@ -32,8 +32,8 @@ task:
        - sudo apt update -y && sudo apt install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
        - sudo apt install python3 -y
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
-       - git config --global user.name "Sushrut1101"
-       - git config --global user.email "guptasushrut@gmail.com"
+       - git config --global user.name "Ibratabian17"
+       - git config --global user.email "ibratabian@gmail.com"
        - git clone https://github.com/akhilnarang/scripts.git ~/scripts
        - cd ~/scripts
        - sudo bash setup/android_build_env.sh
