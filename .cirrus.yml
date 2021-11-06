@@ -14,7 +14,7 @@ env:
     LUNCH_COMBO: aosp_$DEVICE-userdebug
 
 task:
-  name: "Setting Up, Syncing, Building and Uploading..."
+  name: "Build..."
   timeout_in: 240m  
   container:
       image: ubuntu:20.04
