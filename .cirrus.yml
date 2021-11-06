@@ -62,7 +62,7 @@ task:
       - echo "============================"
       - echo "Starting the Build..."
       - echo "============================"
-      - cd ~/work
+      - cd /home/android
       - $EXTRA_CMD
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
@@ -75,7 +75,7 @@ task:
       - echo "============================"
       - echo "Uploading the Build...."
       - echo "============================"
-      - cd ~/work
+      - cd /home/android
       - cd out/target/product/$DEVICE
       - ls -lh
       - pwd
