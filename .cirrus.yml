@@ -14,8 +14,8 @@ env:
     LUNCH_COMBO: aosp_$DEVICE-userdebug
 
 task:
-  name: "Build..."
-  timeout_in: 240m  
+  name: "Building..."
+  timeout_in: 140m  
   container:
       image: ubuntu:20.04
       cpu: 8
