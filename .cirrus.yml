@@ -15,7 +15,7 @@ env:
 
 task:
   name: "Building..."
-  timeout_in: 240m  
+  timeout_in: 4h
   container:
       image: ubuntu:20.04
       cpu: 8
