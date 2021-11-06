@@ -15,11 +15,14 @@ env:
 
 task:
   name: "Building..."
-  timeout_in: 140m  
+  timeout_in: 240m  
   container:
       image: ubuntu:20.04
       cpu: 8
       memory: 32G
+      volumes:
+        - /home/android:/home/android
+
         
   Build-Env-Setup_script:
        - export DEBIAN_FRONTEND=noninteractive
@@ -46,8 +49,8 @@ task:
   
   Sync_script:
       - printf "============================\nSyncing The Sources...\n============================"
-      - mkdir -p ~/work
-      - cd ~/work
+      - mkdir -p /home/android
+      - cd /home/android
       - repo init -u $MANIFEST
       - repo sync -j31 --force-sync --no-tags --no-clone-bundle
       - git clone $DT_LINK $DT_PATH
