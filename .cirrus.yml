@@ -40,5 +40,5 @@ task:
       - cd /home/android
       - repo init -u $MANIFEST
       - repo sync -j31 --force-sync --no-tags --no-clone-bundle
-      - printf "\n\n\n============================\nRepository Berhasil Digunakan!\n============================"
+      - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap dibuild!!\n============================"
         
