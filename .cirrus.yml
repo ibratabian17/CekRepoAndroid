@@ -1,17 +1,5 @@
 env:
     MANIFEST: git://github.com/ProjectHiper-ROM/android_manifest.git -b 11
-    DEVICE: A6020
-    OEM: lenovo
-    DT_LINK: https://github.com/ibratabian17/device_lenovo_A6020.git
-    DT_PATH: device/$OEM/$DEVICE
-    VT_LINK: https://github.com/hsj51/vendor_lenovo_A6020.git
-    VT_PATH: vendor/$OEM/$DEVICE
-    KT_LINK: https://github.com/hsj51/kernel_lenovo_msm8916.git
-    PLATFORM: msm8916
-    KT_PATH: kernel/$OEM/$PLATFORM
-    TARGET: bacon
-    EXTRA_CMD: export SKIP_ABI_CHECKS=true
-    LUNCH_COMBO: aosp_$DEVICE-userdebug
 
 task:
   name: "Building..."
@@ -37,15 +25,6 @@ task:
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
        - git config --global user.name "Ibratabian17"
        - git config --global user.email "ibratabian@gmail.com"
-       - git clone https://github.com/akhilnarang/scripts.git ~/scripts
-       - cd ~/scripts
-       - sudo bash setup/android_build_env.sh
-       - cd ~
-  
-  Storage-Checker_script:
-      - df -h
-      - lsblk
-      - ls -l -a -h
   
   Sync_script:
       - printf "============================\nMemulai Cek Repositori\n============================"
@@ -53,8 +32,5 @@ task:
       - cd /home/android
       - repo init -u $MANIFEST
       - repo sync -j31 --force-sync --no-tags --no-clone-bundle
-      - git clone $DT_LINK $DT_PATH
-      - git clone $VT_LINK $VT_PATH
-      - git clone $KT_LINK $KT_PATH
       - printf "============================\nCek Sync Berhasil!\n============================"
         
