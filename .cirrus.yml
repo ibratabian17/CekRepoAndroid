@@ -2,7 +2,7 @@ env:
     MANIFEST: git://github.com/ProjectHiper-ROM/android_manifest.git -b 11
 task:
   name: "Rom Checker"
-  timeout_in: 4h
+  timeout_in: 1h
   container:
       image: ubuntu:20.04
       cpu: 8
@@ -40,5 +40,5 @@ task:
       - cd /home/android
       - repo init -u $MANIFEST
       - repo sync -j31 --force-sync --no-tags --no-clone-bundle
-      - printf "\n\n\n============================\nCek Sync Berhasil!\n============================"
+      - printf "\n\n\n============================\nRepository Berhasil Digunakan!\n============================"
         
