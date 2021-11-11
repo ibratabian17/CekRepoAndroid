@@ -1,6 +1,5 @@
 env:
     MANIFEST: git://github.com/ProjectHiper-ROM/android_manifest.git -b 11
-
 task:
   name: "Building..."
   timeout_in: 4h
@@ -18,13 +17,22 @@ task:
        - apt install sudo
        - DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
        - ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-       - apt-get install -y tzdata
+       - apt-get -qq install -y tzdata
        - dpkg-reconfigure --frontend noninteractive tzdata
-       - sudo apt update -y && sudo apt install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
-       - sudo apt install python3 -y
+       - sudo apt -qq update -y && sudo apt -qq install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
+       - sudo apt -qq install python3 -y
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
        - git config --global user.name "Ibratabian17"
        - git config --global user.email "ibratabian@gmail.com"
+       - git clone https://github.com/akhilnarang/scripts.git ~/scripts
+       - cd ~/scripts
+       - sudo bash setup/android_build_env.sh
+       - cd ~
+  
+  Storage-Checker_script:
+      - df -h
+      - lsblk
+      - ls -l -a -h
   
   Sync_script:
       - printf "============================\nMemulai Cek Repositori\n============================"
