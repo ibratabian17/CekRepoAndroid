@@ -39,6 +39,6 @@ task:
       - mkdir -p /home/android
       - cd /home/android
       - repo init -u $MANIFEST
-      - repo sync -j31 --force-sync --no-tags --no-clone-bundle
+      - repo sync -j299 --force-sync --no-tags --no-clone-bundle
       - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap digunakan!!\n============================"
         
