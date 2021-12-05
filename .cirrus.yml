@@ -1,5 +1,5 @@
 env:
-    MANIFEST: repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0
+    MANIFEST: https://github.com/ArrowOS/android_manifest.git -b arrow-11.0
     DEVICE: A6020
     OEM: lenovo
     DT_LINK: https://github.com/ibratabian17/device_lenovo_A6020.git
