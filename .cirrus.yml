@@ -23,20 +23,20 @@ task:
         
   Build-Env-Setup_script:
        - export DEBIAN_FRONTEND=noninteractive
-       - apt -q update
-       - apt -q install sudo
-       - DEBIAN_FRONTEND=noninteractive apt-get -q install -y --no-install-recommends tzdata
+       - apt -q update > /dev/null
+       - apt -q install sudo > /dev/null
+       - DEBIAN_FRONTEND=noninteractive apt-get -q install -y --no-install-recommends tzdata > /dev/null
        - ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-       - apt-get -q install -y tzdata
-       - dpkg-reconfigure --frontend noninteractive tzdata
-       - sudo apt -q update -y && sudo apt -q install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
-       - sudo apt -q install python3 -y
-       - sudo ln -sf /usr/bin/python3 /usr/bin/python
-       - git config --global user.name "Pakar"
-       - git config --global user.email "Pakar@gmail.com"
-       - git clone https://github.com/akhilnarang/scripts.git ~/scripts
+       - apt-get -q install -y tzdata > /dev/null
+       - dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
+       - sudo apt -q update -y && sudo apt -q install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y > /dev/null
+       - sudo apt -q install python3 -y > /dev/null
+       - sudo ln -sf /usr/bin/python3 /usr/bin/python 
+       - git config --global user.name "Pakar" > /dev/null
+       - git config --global user.email "Pakar@gmail.com" > /dev/null
+       - git clone https://github.com/akhilnarang/scripts.git ~/scripts > /dev/null
        - cd ~/scripts
-       - sudo bash setup/android_build_env.sh > install.txt
+       - sudo bash setup/android_build_env.sh > /dev/null
        - cd ~
   
   Storage-Checker_script:
@@ -48,8 +48,8 @@ task:
       - echo "============================"
       - echo "Syncing The Sources..."
       - echo "============================"
-      - mkdir -p ~/work
-      - cd ~/work
+      - mkdir -p /home/android/os
+      - cd /home/android/os
       - repo init --depth=1 --no-repo-verify -u $MANIFEST -g default,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       - git clone $DT_LINK $DT_PATH
@@ -63,20 +63,20 @@ task:
       - echo "============================"
       - echo "Starting the Build..."
       - echo "============================"
-      - cd ~/work
+      - cd /home/android/os
       - $EXTRA_CMD
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
-      - ccache -M 300G
+      - ccache -M 400G
       - . build/envsetup.sh
       - lunch $LUNCH_COMBO
-      - mka -j31 $TARGET
+      - mka $TARGET -j8
      
   Upload_script:
       - echo "============================"
       - echo "Uploading the Build..."
       - echo "============================"
-      - cd ~/work
+      - cd /home/android/os
       - cd out/target/product/$DEVICE
       - ls -lh
       - pwd
