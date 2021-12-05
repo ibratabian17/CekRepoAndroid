@@ -6,7 +6,7 @@ env:
     DT_PATH: device/$OEM/$DEVICE
     VT_LINK: https://github.com/ibratabian17/vendor_lenovo_A6020.git
     VT_PATH: vendor/$OEM/$DEVICE
-    KT_LINK: https://github.com/hsj51/device_lenovo_msm8916.git
+    KT_LINK: https://github.com/hsj51/kernel_lenovo_msm8916.git
     PLATFORM: msm8916
     KT_PATH: kernel/$OEM/$PLATFORM
     TARGET: bacon
