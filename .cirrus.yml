@@ -29,7 +29,7 @@ task:
        - ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
        - apt-get -q install -y tzdata > /dev/null
        - dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
-       - sudo apt -q update -y && sudo apt -q install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y > /dev/null
+       - sudo apt -q update -y && sudo apt -q install git aria2 curl wget rsync zip unzip lzma cpio ccache clang jq -y > /dev/null
        - sudo apt -q install python3 -y > /dev/null
        - sudo ln -sf /usr/bin/python3 /usr/bin/python 
        - git config --global user.name "Pakar" > /dev/null
