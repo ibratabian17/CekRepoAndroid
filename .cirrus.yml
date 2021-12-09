@@ -19,14 +19,11 @@ task:
        - ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
        - apt-get -qq install -y tzdata
        - dpkg-reconfigure --frontend noninteractive tzdata
-       - sudo apt -qq update -y && sudo apt -qq install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
+       - sudo apt -qq update -y && sudo apt -qq install git git-repo -y
        - sudo apt -qq install python3 -y
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
        - git config --global user.name "Ibratabian17"
        - git config --global user.email "ibratabian@gmail.com"
-       - git clone https://github.com/akhilnarang/scripts.git ~/scripts
-       - cd ~/scripts
-       - sudo bash setup/android_build_env.sh
        - cd ~
   
   Storage-Checker_script:
