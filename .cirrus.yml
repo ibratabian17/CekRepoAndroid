@@ -24,8 +24,8 @@ task:
        - cd ~/scripts
        - sudo bash setup/android_build_env.sh > /dev/null
        - cd ~
-       - sudo fallocate -l 128G /swapfile
-       - sudo dd if=/dev/zero of=/swapfile bs=131072 count=1048576
+       - sudo fallocate -l 32G /swapfile
+       - sudo dd if=/dev/zero of=/swapfile bs=1K count=32M
        - sudo chmod 600 /swapfile
        - sudo mkswap /swapfile
        - sudo swapon /swapfile
