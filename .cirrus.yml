@@ -40,7 +40,6 @@ task:
       - mkdir -p ~/android/os
       - cd ~/android/os
       - repo init --depth=1 --no-repo-verify -u https://github.com/ProjectHiper-ROM/android_manifests -b 11 -g default,-mips,-darwin,-notdefault
-      - git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b b2 .repo/local_manifests
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j31
       - echo "============================"
       - echo "Syncing Complete!"
@@ -57,7 +56,7 @@ task:
       - ccache -M 400G
       - . build/envsetup.sh
       - croot
-      - lunch hiper_beryllium-userdebug
+      - lunch hiper_arm64-userdebug
       - mka bacon -j31
      
   Upload_script:
