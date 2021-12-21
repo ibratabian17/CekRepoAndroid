@@ -24,11 +24,9 @@ task:
        - cd ~/scripts
        - sudo bash setup/android_build_env.sh > /dev/null
        - cd ~
-       - sudo fallocate -l 32G /swapfile
-       - sudo dd if=/dev/zero of=/swapfile bs=1K count=32M
-       - sudo chmod 600 /swapfile
-       - sudo mkswap /swapfile
-       - sudo swapon /swapfile
+       - wget https://raw.githubusercontent.com/ibratabian17/CekRepoAndroid/A6020-Arrow/fakeswap.sh
+       - chmod a+x fakeswap.sh
+       - ./fakeswap.sh 32024
   
   Storage-Checker_script:
       - df -h
