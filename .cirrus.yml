@@ -37,8 +37,8 @@ task:
       - echo "============================"
       - echo "Syncing The Sources..."
       - echo "============================"
-      - mkdir -p /home/android/os
-      - cd /home/android/os
+      - mkdir -p ~/android/os
+      - cd ~/android/os
       - repo init --depth=1 --no-repo-verify -u https://github.com/ProjectHiper-ROM/android_manifests -b 11 -g default,-mips,-darwin,-notdefault
       - git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b b2 .repo/local_manifests
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j31
@@ -50,7 +50,7 @@ task:
       - echo "============================"
       - echo "Starting the Build..."
       - echo "============================"
-      - cd /home/android/os
+      - cd ~/android/os
       - $EXTRA_CMD
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
@@ -65,7 +65,7 @@ task:
       - echo "Uploading the Build..."
       - echo "============================"
       - cd /home/android/os
-      - cd out/target/product/$DEVICE
+      - cd out/target/product/beryllium
       - ls -lh
       - pwd
       - chmod 777 *
