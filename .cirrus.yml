@@ -12,19 +12,19 @@ task:
        - apt -q update > /dev/null
        - apt -q install sudo > /dev/null
        - DEBIAN_FRONTEND=noninteractive apt-get -q install -y --no-install-recommends tzdata > /dev/null
-       - ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+       - ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime > /dev/null
        - apt-get -q install -y tzdata > /dev/null
        - dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
        - sudo apt -q update -y && sudo apt -q install git aria2 curl wget rsync zip unzip lzma cpio ccache clang jq -y > /dev/null
        - sudo apt -q install python3 -y > /dev/null
-       - sudo ln -sf /usr/bin/python3 /usr/bin/python 
+       - sudo ln -sf /usr/bin/python3 /usr/bin/python > /dev/null
        - git config --global user.name "Pakar" > /dev/null
        - git config --global user.email "Pakar@gmail.com" > /dev/null
        - git clone https://github.com/akhilnarang/scripts.git ~/scripts > /dev/null
        - cd ~/scripts
        - sudo bash setup/android_build_env.sh > /dev/null
        - cd ~
-       - wget https://raw.githubusercontent.com/ibratabian17/CekRepoAndroid/A6020-Arrow/fakeswap.sh
+       - wget https://raw.githubusercontent.com/ibratabian17/CekRepoAndroid/A6020-Arrow/fakeswap.sh > /dev/null
        - chmod a+x fakeswap.sh
        - ./fakeswap.sh 32024
   
