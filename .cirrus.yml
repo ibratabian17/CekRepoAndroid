@@ -57,8 +57,8 @@ task:
       - ccache -M 400G
       - . build/envsetup.sh
       - croot
-      - lunch hiper_beryllium-userdebug
-      - mka bacon -j31
+      - lunch hiper_arm64-userdebug
+      - mka -j31
      
   Upload_script:
       - echo "============================"
