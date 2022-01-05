@@ -34,7 +34,7 @@ task:
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 150G
-      - . build/envsetup.sh && lunch lineage_A6020-userdebug && mka api-stubs-docs -j8 && mka system-api-stubs-docs -j8 && mka test-api-stubs-docs -j8 && mka bacon -j8
+      - . build/envsetup.sh && lunch lineage_A6020-userdebug && mka api-stubs-docs -j16 && mka system-api-stubs-docs -j16 && mka test-api-stubs-docs -j16 && mka bacon -j8
      
   upload_script:
       - cd android
