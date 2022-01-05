@@ -34,13 +34,12 @@ task:
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 150G
-      - . build/envsetup.sh
       - croot
-      - lunch lineage_A6020-userdebug && mka api-stubs-docs && mka system-api-stubs-docs && mka test-api-stubs-docs && mka bacon
+      - . build/envsetup.sh && lunch lineage_A6020-userdebug && mka api-stubs-docs -j8 && mka system-api-stubs-docs -j8 && mka test-api-stubs-docs -j8 && mka bacon -j8
      
   upload_script:
       - cd android
-      - cd out/target/product/beryllium
+      - cd out/target/product/A6020
       - ls -lh
       - pwd
       - chmod 777 *
