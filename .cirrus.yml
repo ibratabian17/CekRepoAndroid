@@ -36,7 +36,7 @@ task:
       - ccache -M 150G
       - . build/envsetup.sh
       - croot
-      - lunch lineage_A6020-userdebug && mka bacon -j8
+      - lunch lineage_A6020-userdebug && mka api-stubs-docs && mka system-api-stubs-docs && mka test-api-stubs-docs && mka bacon
      
   upload_script:
       - cd android
