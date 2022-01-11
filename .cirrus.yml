@@ -25,7 +25,7 @@ task:
   sync_script:
       - mkdir android
       - cd android
-      - repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+      - repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/android_manifest -b 10 -g default,-mips,-darwin,-notdefault
       - git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b main .repo/local_manifests
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -34,7 +34,7 @@ task:
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 150G
-      - . build/envsetup.sh && lunch lineage_A6020-userdebug && mka api-stubs-docs -j16 && mka system-api-stubs-docs -j16 && mka test-api-stubs-docs -j16 && mka bacon -j8
+      - . build/envsetup.sh && lunch nad_A6020-userdebug && mka bacon -j8
      
   upload_script:
       - cd android
