@@ -45,4 +45,3 @@ task:
       - curl --upload-file *.zip https://transfer.sh | tee link.txt && echo " "
       - cat link.txt && echo "  "
         
-
