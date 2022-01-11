@@ -34,7 +34,7 @@ task:
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 150G
-      - . build/envsetup.sh && lunch nad_A6020-userdebug && mka bacon -j8
+      - . build/envsetup.sh && lunch nad_A6020-userdebug && mka nad -j8
      
   upload_script:
       - cd android
