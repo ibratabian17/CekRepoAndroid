@@ -34,6 +34,7 @@ task:
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 150G
+      - git clone --depth=1 https://github.com/ghostrider-reborn/prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-6.x.git prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.x
       - . build/envsetup.sh && lunch nad_A6020-userdebug && mka nad -j8
      
   upload_script:
