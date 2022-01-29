@@ -30,4 +30,5 @@ task:
       - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap digunakan!!\n============================"
         
   Build_script:
+      - cd /home/android
       - . build/envsetup.sh && lunch swift_lava-userdebug && mka bacon -j8
