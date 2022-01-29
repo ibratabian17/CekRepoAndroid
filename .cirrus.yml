@@ -7,8 +7,6 @@ task:
       image: anyakichi/aosp-builder:bionic
       cpu: 8
       memory: 32G
-      volumes:
-        - /home/android:/home/android
 
         
   Build-Env-Setup_script:
@@ -31,5 +29,5 @@ task:
       - git clone https://github.com/SwiftOS-Devices/android_device_xiaomi_lava && git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_lava -b eleven vendor/xiaomi/lava && git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768 && git clone https://github.com/PixelExperience/device_mediatek_sepolicy_vndr -b eleven device/mediatek/sepolicy_vndr && git clone https://github.com/Redmi-MT6768/android_device_xiaomi_mt6768-common -b eleven device/xiaomi/mt6768-common
       - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap digunakan!!\n============================"
         
-   Build-Test_script:
+  Build_script:
       - . build/envsetup.sh && lunch swift_lava-userdebug && mka bacon
