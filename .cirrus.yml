@@ -12,7 +12,6 @@ task:
        - DEBIAN_FRONTEND=noninteractive > /dev/null
        - git config --global user.name "Pakar" > /dev/null
        - git config --global user.email "Pakar@gmail.com" > /dev/null
-       - git clone https://github.com/akhilnarang/scripts.git ~/scripts > /dev/null
   
   Storage-Checker_script:
       - df -h
@@ -25,16 +24,16 @@ task:
       - echo "============================"
       - mkdir -p ~/android/os
       - cd ~/android/os
-      - repo init --depth=1 --no-repo-verify -u https://github.com/ProjectHiper-ROM/android_manifests -b 11 -g default,-mips,-darwin,-notdefault
-      - git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b b2 .repo/local_manifests
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j128
+      - repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android/ -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+      - git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b 12-dev .repo/local_manifests
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       - echo "============================"
       - echo "Syncing Complete!"
       - echo "============================"
 
   Build_script:
       - echo "============================"
-      - echo "Starting the Build..."
+      - echo "Starting Testing Tree"
       - echo "============================"
       - cd ~/android/os
       - $EXTRA_CMD
@@ -44,7 +43,7 @@ task:
       - . build/envsetup.sh
       - croot
       - lunch hiper_beryllium-userdebug
-      - mka bacon -j256
+      - mka bacon -j8
      
   Upload_script:
       - echo "============================"
