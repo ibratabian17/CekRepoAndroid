@@ -38,7 +38,7 @@ task:
      
   upload_script:
       - cd android
-      - cd out/target/product/A6020
+      - cd out/target/product/A6020/kernel
       - curl -T Image.gz-dtb https://oshi.at > log
       - cat log
         
