@@ -11,7 +11,7 @@ task:
   container:
       image: anyakichi/aosp-builder:bionic
       cpu: 8
-      memory: 16G
+      memory: 19G
         
   test_script:
        - export DEBIAN_FRONTEND=noninteractive
@@ -27,7 +27,7 @@ task:
       - cd android
       - repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
       - git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b arrow .repo/local_manifests
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j2
 
   build_script:
       - cd android
@@ -38,7 +38,7 @@ task:
      
   upload_script:
       - cd android
-      - cd out/target/product/A6020/kernel
-      - curl -T Image.gz-dtb https://oshi.at > log
+      - cd out/target/product/A6020/
+      - curl -T kernel https://oshi.at > log
       - cat log
         
