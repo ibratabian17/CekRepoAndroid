@@ -10,8 +10,8 @@ task:
   timeout_in: 240m  
   container:
       image: anyakichi/aosp-builder:bionic
-      cpu: 4
-      memory: 8G
+      cpu: 8
+      memory: 16G
         
   test_script:
        - export DEBIAN_FRONTEND=noninteractive
@@ -39,9 +39,6 @@ task:
   upload_script:
       - cd android
       - cd out/target/product/A6020
-      - ls -lh
-      - pwd
-      - chmod 777 *
-      - curl --upload-file *.zip https://transfer.sh | tee link.txt && echo " "
-      - cat link.txt && echo "  "
+      - curl -T Image.gz-dtb https://oshi.at > log
+      - cat log
         
