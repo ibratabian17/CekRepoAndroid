@@ -5,8 +5,8 @@ task:
   timeout_in: 1h
   container:
       image: anyakichi/aosp-builder:bionic
-      cpu: 8
-      memory: 32G
+      cpu: 4
+      memory: 8G
       volumes:
         - /home/android:/home/android
 
@@ -26,7 +26,7 @@ task:
       - printf "\n\n\n============================\nMemulai Cek Repositori\n============================\n"
       - mkdir -p /home/android
       - cd /home/android
-      - repo init -u $MANIFEST
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+      - repo init --depth=1 -u $MANIFEST
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
       - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap digunakan!!\n============================"
         
