@@ -13,8 +13,7 @@ task:
         
   Build-Env-Setup_script:
        - export DEBIAN_FRONTEND=noninteractive
-       - apt-get install sudo
-       - sudo apt install build-essential lzip git zip git-lfs -y 
+       - apt install build-essential lzip git zip git-lfs -y 
        - git config --global user.name "Ibratabian17"
        - git config --global user.email "ibratabian@gmail.com"
        - cd ~
