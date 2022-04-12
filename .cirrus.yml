@@ -23,10 +23,11 @@ task:
       - ls -l -a -h
   
   Sync_script:
-      - printf "\n\n\n============================\nMemulai Cek Repositori\n============================\n"
-      - mkdir -p /home/android
-      - cd /home/android
-      - repo init --depth=1 -u $MANIFEST
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
+      - printf "\n\n\n============================\nMemulai Build Gapps\n============================\n"
+      - git clone https://github.com/opengapps/opengapps.git --depth=1
+      - cd opengapps
+      - ./download_sources.sh --shallow arm64
+      - make arm64-32-pico
+      - ./report_sources.sh
       - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap digunakan!!\n============================"
         
