@@ -24,7 +24,7 @@ task:
   
   Sync_script:
       - printf "\n\n\n============================\nMemulai Build Gapps\n============================\n"
-      - git clone https://github.com/opengapps/opengapps.git --depth=1
+      - git clone https://github.com/opengapps/opengapps --depth=1
       - cd opengapps
       - ./download_sources.sh --shallow arm64
       - make arm64-32-pico
