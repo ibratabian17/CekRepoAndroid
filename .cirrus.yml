@@ -4,7 +4,7 @@ task:
   name: "Rom Checker"
   timeout_in: 1h
   container:
-      image: anyakichi/aosp-builder:bionic
+      image: ubuntu:latest
       cpu: 4
       memory: 8G
       volumes:
@@ -15,6 +15,7 @@ task:
        - export DEBIAN_FRONTEND=noninteractive
        - git config --global user.name "Ibratabian17"
        - git config --global user.email "ibratabian@gmail.com"
+       - sudo apt install build-essential lzip git zip git-lfs -y 
        - cd ~
   
   Storage-Checker_script:
