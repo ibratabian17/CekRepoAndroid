@@ -1,5 +1,5 @@
 env:
-    MANIFEST: https://github.com/SwiftOS-DROID/android_manifest.git -b 12
+    MANIFEST: https://github.com/SwiftOS-DROID/android_manifest.git -b 12.1
 task:
   name: "Rom Checker"
   timeout_in: 1h
