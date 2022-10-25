@@ -1,11 +1,11 @@
 env:
-    MANIFEST: https://github.com/SwiftOS-DROID/android_manifest.git -b 12.1
+    MANIFEST: https://github.com/SwiftAOSP/sw_manifest.git -b 13
 task:
   name: "Rom Checker"
   timeout_in: 1h
   container:
       image: anyakichi/aosp-builder:bionic
-      cpu: 4
+      cpu: 2
       memory: 8G
       volumes:
         - /home/android:/home/android
@@ -27,6 +27,6 @@ task:
       - mkdir -p /home/android
       - cd /home/android
       - repo init --depth=1 -u $MANIFEST
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       - printf "\n\n\n============================\nRepository Berhasil Diunduh, Siap digunakan!!\n============================"
         
